@@ -1,0 +1,97 @@
+@import '../../GlobalStyles/vars-mixins';
+
+//Geral
+body {
+  overflow: auto;
+  &.active {
+    overflow: hidden;
+  }
+}
+
+.logo {
+  max-width: 100px;
+  @include desktop {
+    max-width: 100%;
+  }
+  &.active {
+    display: none;
+  }
+}
+
+//SubComponents
+.containerNumber {
+  display: flex;
+  .iconCelCinza {
+    display: none;
+  }
+  p {
+    font-size: 0.875rem;
+    margin-left: 10px;
+    font-weight: 600;
+  }
+  &:hover {
+    .iconCel {
+      display: none;
+    }
+    .iconCelCinza {
+      display: block;
+    }
+  }
+}
+
+//Component
+.headerMobile {
+  position: relative;
+  @include desktop {
+    display: none;
+  }
+  .elementsMobile {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    padding: 15px 15px 0 15px;
+    justify-content: space-between;
+    background-color: $secondColor;
+    z-index: 155;
+  }
+}
+
+.headerDesktop {
+  display: none;
+  position: fixed;
+  width: 100%;
+  padding: 15px 15px 0 15px;
+  background-color: $secondColor;
+  z-index: 155;
+  @include desktop {
+    display: flex;
+    flex-direction: column;
+  }
+  .containerDesktop {
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .containerItemsMenu {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 372px;
+    }
+  }
+}
+
+//Animations
+@keyframes showUlMenu {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}

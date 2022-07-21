@@ -1,0 +1,8 @@
+@import '../../GlobalStyles/vars-mixins';
+
+.containerMain {
+  padding-top: 123px;
+  @include desktop {
+    padding-top: 174px;
+  }
+}
