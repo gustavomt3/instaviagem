@@ -3,7 +3,7 @@ import React from 'react';
 //Styles
 import './GlobalStyles/App.module.scss';
 //Context
-import { GlobalStore } from './Contexts/GlobalContext';
+import { GlobalStorage } from './Contexts/GlobalContext';
 //Components
 import Header from './Components/Header/Header';
 //Pages
@@ -14,7 +14,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <GlobalStore>
+    <GlobalStorage>
       <BrowserRouter>
         <Header />
         <Routes>
@@ -22,7 +22,7 @@ function App() {
           <Route path="/favorites" element={<Favorite />} />
         </Routes>
       </BrowserRouter>
-    </GlobalStore>
+    </GlobalStorage>
   );
 }
 

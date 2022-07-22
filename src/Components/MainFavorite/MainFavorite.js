@@ -5,9 +5,9 @@ import styles from './MainFavorite.module.scss';
 
 const MainFavorite = () => {
   return (
-    <div>
+    <main>
       <p>MainFavorive</p>
-    </div>
+    </main>
   );
 };
 

@@ -1,8 +1,23 @@
 @import '../../GlobalStyles/vars-mixins';
 
 .containerMain {
-  padding-top: 123px;
-  @include desktop {
-    padding-top: 174px;
+  width: 100%;
+  display: flex;
+  padding: 50px 30px;
+  .containerCards {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    @include tablet {
+      justify-content: space-around;
+      flex-direction: row;
+    }
+    @include desktop {
+      max-width: 1344px;
+    }
   }
 }

@@ -18,15 +18,11 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.containerGeral}>
         <div className={styles.logoFavorito}>
-          <Link to="/">
-            <div className={styles.logo}>
-              <img src={logo} alt="Logo Instaviagem" />
-            </div>
+          <Link to="/" className={styles.logo}>
+            <img src={logo} alt="Logo Instaviagem" />
           </Link>
-          <Link to="/favorites">
-            <div className={styles.favorito}>
-              <img src={iconHeart} alt="Icon Heart" />
-            </div>
+          <Link to="/favorites" className={styles.favorito}>
+            <img src={iconHeart} alt="Icon Heart" />
           </Link>
         </div>
         <Filter />
