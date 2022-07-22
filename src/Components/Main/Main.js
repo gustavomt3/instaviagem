@@ -5,7 +5,11 @@ import React from 'react';
 import styles from './Main.module.scss';
 
 const Main = () => {
-  return <main className={styles.containerMain}></main>;
+  return (
+    <main className={styles.containerMain}>
+      <p>Main</p>
+    </main>
+  );
 };
 
 export default Main;

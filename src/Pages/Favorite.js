@@ -1,12 +1,12 @@
 //React
 import React from 'react';
 //Components
-import Main from '../Components/Main/Main';
+import MainFavorite from '../Components/MainFavorite/MainFavorite';
 
 const Home = () => {
   return (
     <>
-      <Main />
+      <MainFavorite />
     </>
   );
 };

@@ -5,60 +5,31 @@ import styles from './Header.module.scss';
 //Context
 import { GlobalContext } from '../../Contexts/GlobalContext';
 //Components
-import Cart from '../Cart/Cart';
-import MenuHamburguer from '../MenuHamburguer/MenuHamburguer';
-import Search from '../Search/Search';
-import Account from '../Account/Account';
-import MenuDesktop from '../MenuDesktop/MenuDesktop';
+import Filter from '../Filter/Filter';
 //Images
-import logo from '../../Assets/logo.svg';
-import iconCel from '../../Assets/icone-cel.svg';
-import iconCelCinza from '../../Assets/icone-cel-cinza.svg';
+import logo from '../../Assets/logo-instaviagem.png';
+import iconHeart from '../../Assets/icon-heart.svg';
+//React Router Dom
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const global = React.useContext(GlobalContext);
   return (
     <header className={styles.header}>
-      <div className={styles.headerMobile}>
-        <div className={styles.elementsMobile}>
-          <MenuHamburguer />
-          <img
-            src={logo}
-            alt="Logo Auaha"
-            className={`${styles.logo} ${
-              global.active ? `${styles.active}` : ''
-            }`}
-          />
-          <Cart />
-        </div>
-        <Search />
-      </div>
-
-      <div className={styles.headerDesktop}>
-        <div className={`${styles.container} ${styles.containerDesktop}`}>
-          <Search />
-          <img
-            src={logo}
-            alt="Logo Auaha"
-            className={`${styles.logo} ${
-              global.active ? `${styles.active}` : ''
-            }`}
-          />
-          <div className={styles.containerItemsMenu}>
-            <Account />
-            <div className={styles.containerNumber}>
-              <img src={iconCel} alt="Icon Cel" className={styles.iconCel} />
-              <img
-                src={iconCelCinza}
-                alt="Icon Cel"
-                className={styles.iconCelCinza}
-              />
-              <p>(99) 99999-9999</p>
+      <div className={styles.containerGeral}>
+        <div className={styles.logoFavorito}>
+          <Link to="/">
+            <div className={styles.logo}>
+              <img src={logo} alt="Logo Instaviagem" />
             </div>
-            <Cart />
-          </div>
+          </Link>
+          <Link to="/favorites">
+            <div className={styles.favorito}>
+              <img src={iconHeart} alt="Icon Heart" />
+            </div>
+          </Link>
         </div>
-        <MenuDesktop />
+        <Filter />
       </div>
     </header>
   );

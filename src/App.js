@@ -1,12 +1,27 @@
+//React
 import React from 'react';
-import Home from './Pages/Home';
-import { GlobalStore } from './Contexts/GlobalContext';
+//Styles
 import './GlobalStyles/App.module.scss';
+//Context
+import { GlobalStore } from './Contexts/GlobalContext';
+//Components
+import Header from './Components/Header/Header';
+//Pages
+import Home from './Pages/Home';
+import Favorite from './Pages/Favorite';
+//Routes
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <GlobalStore>
-      <Home />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/favorites" element={<Favorite />} />
+        </Routes>
+      </BrowserRouter>
     </GlobalStore>
   );
 }
