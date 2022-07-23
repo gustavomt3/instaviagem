@@ -1,35 +1,33 @@
 import React from 'react';
 //Components
 import Card from '../Card/Card';
+import Filter from '../Filter/Filter';
+//Context
+import { GlobalContext } from '../../Contexts/GlobalContext';
 //Styles
 import styles from './Main.module.scss';
 
 const Main = () => {
-  const [data, setData] = React.useState(null);
-  const [loading, setLoading] = React.useState(null);
-
-  React.useEffect(() => {
-    setLoading(true);
-    fetch(
-      'https://us-central1-rapid-api-321400.cloudfunctions.net/instaviagem-challenge',
-    )
-      .then((response) => response.json())
-      .then((json) => setData(json), setLoading(false));
-  }, []);
-
-  console.log(data);
+  const global = React.useContext(GlobalContext);
 
   return (
-    <main className={styles.containerMain}>
-      {loading && <p>Loading...</p>}
-      <ul className={styles.containerCards}>
-        {!loading &&
-          data &&
-          data.map((data) => {
-            return <Card key={data._id} data={data} />;
-          })}
-      </ul>
-    </main>
+    <>
+      <Filter renderDataWithFilter={global.renderDataWithFilter} />
+      <main className={styles.containerMain}>
+        {global.loading && (
+          <div className={styles.loading}>
+            <p>Loading...</p>
+          </div>
+        )}
+        <ul className={styles.containerCards}>
+          {!global.loading &&
+            global.data &&
+            global.dataWithFilter.map((data) => {
+              return <Card key={data._id} data={data} />;
+            })}
+        </ul>
+      </main>
+    </>
   );
 };
 

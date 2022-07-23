@@ -1,25 +1,79 @@
 //React
 import React from 'react';
 //Styles
-import styles from './Filter.module.scss';
+import './Filter.scss';
 //Context
 import { GlobalContext } from '../../Contexts/GlobalContext';
 
-export const Filter = () => {
+export const Filter = ({ renderDataWithFilter }) => {
   const global = React.useContext(GlobalContext);
+  const [active, setActive] = React.useState([0, 0, 0]);
+
+  function compare(txt, element) {
+    if (txt === 'hotel') {
+      setActive([0, 1, 1]);
+      if (active[1] === 1) {
+        setActive([0, 0, 0]);
+      }
+    } else if (txt === 'transport') {
+      setActive([1, 0, 1]);
+      if (active[0] === 1) {
+        setActive([0, 0, 0]);
+      }
+    } else {
+      setActive([1, 1, 0]);
+      if (active[0] === 1) {
+        setActive([0, 0, 0]);
+      }
+    }
+  }
+
   return (
-    <nav className={styles.containerFilter}>
+    <nav className="containerFilter">
       <p>Filter by:</p>
-      <div className={styles.filters}>
-        <div className={styles.divFilters}>
-          <span>Accommodation</span>
-        </div>
-        <div className={styles.divFilters}>
-          <span>Transport</span>
-        </div>
-        <div className={styles.divFilters}>
-          <span>Attraction</span>
-        </div>
+      <div className="filters">
+        <button
+          className={`divFilters ${!active[0] == 1 ? '' : 'disabled'}`}
+          id="accomodation"
+          onClick={() => {
+            const element = document.querySelector('#accomodation');
+            const txt = element.innerText.toLowerCase();
+            element.classList.toggle('active');
+            renderDataWithFilter(txt);
+            compare(txt);
+          }}
+          disabled={!active[0] == 1 ? '' : 'disabled'}
+        >
+          Hotel
+        </button>
+        <button
+          className={`divFilters ${!active[1] == 1 ? '' : 'disabled'}`}
+          id="transport"
+          onClick={() => {
+            const element = document.querySelector('#transport');
+            const txt = element.innerText.toLowerCase();
+            element.classList.toggle('active');
+            renderDataWithFilter(txt);
+            compare(txt);
+          }}
+          disabled={!active[1] == 1 ? '' : 'disabled'}
+        >
+          Transport
+        </button>
+        <button
+          className={`divFilters ${!active[2] == 1 ? '' : 'disabled'}`}
+          id="attraction"
+          onClick={() => {
+            const element = document.querySelector('#attraction');
+            const txt = element.innerText.toLowerCase();
+            element.classList.toggle('active');
+            renderDataWithFilter(txt);
+            compare(txt);
+          }}
+          disabled={!active[2] == 1 ? '' : 'disabled'}
+        >
+          Attraction
+        </button>
       </div>
     </nav>
   );

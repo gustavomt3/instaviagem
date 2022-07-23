@@ -1,9 +1,17 @@
 @import '../../GlobalStyles/vars-mixins';
 
 .containerMain {
+  position: relative;
   width: 100%;
   display: flex;
   padding: 50px 30px;
+  justify-content: center;
+  .loading {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
   .containerCards {
     width: 100%;
     display: flex;

@@ -1,9 +1,12 @@
 @import '../../GlobalStyles/vars-mixins';
-
+.active {
+  background-color: #f0f0f0;
+}
 .containerFilter {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 30px;
   p {
     font-weight: 700;
     margin-bottom: 15px;
@@ -18,11 +21,21 @@
       margin-right: 10px;
       padding: 5px 10px;
       cursor: pointer;
+      background-color: transparent;
       &:last-child {
         margin-right: 0;
       }
       &:hover {
         background-color: #f0f0f0;
+      }
+      span {
+        text-transform: capitalize;
+      }
+      &.active {
+        background-color: #f0f0f0;
+      }
+      &.disabled {
+        opacity: 0.7;
       }
     }
   }
