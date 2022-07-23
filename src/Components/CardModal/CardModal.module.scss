@@ -88,13 +88,6 @@
     .aboutCard {
       padding: 0 15px;
       margin-bottom: 20px;
-      p {
-        display: -webkit-box;
-        -webkit-line-clamp: 6;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        -webkit-box-orient: vertical;
-      }
     }
     .priceButton {
       padding: 0 15px;

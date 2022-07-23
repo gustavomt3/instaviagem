@@ -16,7 +16,6 @@ const Card = ({ data, setModalCard }) => {
   function handleClick(event) {
     if (event.target.ariaLabel !== 'iconHeart') {
       setModalCard(data);
-      console.log('abrir modal');
     }
   }
 

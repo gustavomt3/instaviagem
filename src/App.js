@@ -3,7 +3,7 @@ import React from 'react';
 //Styles
 import './GlobalStyles/App.module.scss';
 //Context
-import { GlobalStorage } from './Contexts/GlobalContext';
+// import { GlobalStorage } from './Contexts/GlobalState';
 //Components
 import Header from './Components/Header/Header';
 //Pages
@@ -14,15 +14,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <GlobalStorage>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/favorites" element={<Favorite />} />
-        </Routes>
-      </BrowserRouter>
-    </GlobalStorage>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/favorites" element={<Favorite />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
