@@ -2,9 +2,12 @@ import React from 'react';
 //Styles
 import styles from './Card.module.scss';
 
-const Card = ({ data }) => {
+const Card = ({ data, setModalCard }) => {
+  function handleClick() {
+    setModalCard(data);
+  }
   return (
-    <li className={styles.containerCard}>
+    <li className={styles.containerCard} onClick={handleClick}>
       <div className={styles.nameAddress}>
         <h1>{data.name}</h1>
         <h2>{data.address}</h2>

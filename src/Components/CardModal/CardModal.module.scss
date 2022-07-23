@@ -1,0 +1,111 @@
+@import '../../GlobalStyles/vars-mixins';
+
+.loading {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.containerGeralModal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem calc(2rem - 15px) 2rem 2rem;
+  @include tablet {
+    padding: 2rem calc(4rem - 15px) 2rem 4rem;
+  }
+  .containerModal {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: auto;
+    background-color: $secondColor;
+    box-shadow: 0px 0px 17px 8px #0000004f;
+    padding: 30px 0 30px 0;
+    @include tablet {
+      width: 600px;
+    }
+    @include desktop {
+      width: 800px;
+    }
+    .nameAddress {
+      padding: 0 15px;
+      margin-bottom: 20px;
+      h1 {
+        margin-bottom: 10px;
+        font-size: 1.25rem;
+        font-weight: 900;
+      }
+      h2 {
+        font-size: 1.0625rem;
+        font-weight: 700;
+      }
+    }
+    .phoneEmail {
+      padding: 0 15px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      .phone,
+      .address {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 36px;
+        width: 190px;
+        background-color: #5bbfec;
+        border-radius: 5px;
+        margin-right: 20px;
+        img {
+          max-width: 16px;
+          margin-right: 10px;
+        }
+      }
+      .phone {
+        margin-bottom: 15px;
+        @include tablet {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .cardPhoto {
+      margin-bottom: 20px;
+      img {
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .aboutCard {
+      padding: 0 15px;
+      margin-bottom: 20px;
+      p {
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+      }
+    }
+    .priceCard {
+      padding: 0 15px;
+      span {
+        display: flex;
+        align-content: center;
+        max-width: 110px;
+        background-color: #5bbfec;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-weight: 700;
+      }
+    }
+  }
+}

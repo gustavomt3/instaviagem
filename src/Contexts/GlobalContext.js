@@ -4,59 +4,62 @@ import React from 'react';
 export const GlobalContext = React.createContext();
 
 export const GlobalStorage = ({ children }) => {
-  const [data, setData] = React.useState([]);
-  const [loading, setLoading] = React.useState(false);
-  const [dataWithFilter, setDataWithFilter] = React.useState([]);
-  const [filtering, setFiltering] = React.useState(false);
+  // const [data, setData] = React.useState([]);
+  // const [loading, setLoading] = React.useState(false);
+  // const [dataWithFilter, setDataWithFilter] = React.useState([]);
+  // const [filtering, setFiltering] = React.useState(false);
 
-  const getData = async () => {
-    setLoading(true);
-    try {
-      const response = await fetch(
-        'https://us-central1-rapid-api-321400.cloudfunctions.net/instaviagem-challenge',
-      );
-      const data = await response.json();
-      const dataAlf = data.sort((a, b) => {
-        return a.name.localeCompare(b.name);
-      });
-      setData(dataAlf);
-      setDataWithFilter(dataAlf);
-    } catch (err) {
-      console.log('error', err);
-    } finally {
-      setLoading(false);
-    }
-  };
+  // const getData = async () => {
+  //   setLoading(true);
+  //   try {
+  //     const response = await fetch(
+  //       'https://us-central1-rapid-api-321400.cloudfunctions.net/instaviagem-challenge',
+  //     );
+  //     const data = await response.json();
+  //     const dataAlf = data.sort((a, b) => {
+  //       return a.name.localeCompare(b.name);
+  //     });
+  //     setData(dataAlf);
+  //     setDataWithFilter(dataAlf);
+  //   } catch (err) {
+  //     console.log('error', err);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
-  const renderDataWithFilter = (filter) => {
-    const withFilter = data.filter((x) => x.type === filter);
-    setDataWithFilter(withFilter);
-    setFiltering(!filtering);
-  };
+  // const renderDataWithFilter = (filter) => {
+  //   const withFilter = data.filter((x) => x.type === filter);
+  //   setDataWithFilter(withFilter);
+  //   setFiltering(!filtering);
+  // };
 
-  React.useEffect(() => {
-    getData();
-  }, []);
+  // React.useEffect(() => {
+  //   getData();
+  // }, []);
 
-  React.useEffect(() => {
-    if (!filtering) {
-      setDataWithFilter(data);
-    }
-  }, [filtering]);
+  // React.useEffect(() => {
+  //   if (!filtering) {
+  //     setDataWithFilter(data);
+  //   }
+  // }, [filtering]);
 
   return (
     <GlobalContext.Provider
-      value={{
-        setData,
-        data,
-        renderDataWithFilter,
-        loading,
-        setLoading,
-        dataWithFilter,
-        setDataWithFilter,
-        filtering,
-        setFiltering,
-      }}
+      value={
+        {
+          // setData,
+          // data,
+          // renderDataWithFilter,
+          // loading,
+          // setLoading,
+          // dataWithFilter,
+          // setDataWithFilter,
+          // filtering,
+          // setFiltering,
+          // getData,
+        }
+      }
     >
       {children}
     </GlobalContext.Provider>

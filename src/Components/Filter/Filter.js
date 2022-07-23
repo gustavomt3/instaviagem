@@ -2,14 +2,11 @@
 import React from 'react';
 //Styles
 import './Filter.scss';
-//Context
-import { GlobalContext } from '../../Contexts/GlobalContext';
 
-export const Filter = ({ renderDataWithFilter, data }) => {
-  const global = React.useContext(GlobalContext);
+export const Filter = ({ renderDataWithFilter }) => {
   const [active, setActive] = React.useState([0, 0, 0]);
 
-  function compare(txt, element) {
+  function compare(txt) {
     if (txt === 'hotel') {
       setActive([0, 1, 1]);
       if (active[1] === 1) {
