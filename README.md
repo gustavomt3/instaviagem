@@ -14,6 +14,10 @@
 
 # Documentação
 
+## Descrição do projeto
+
+O app mostra infos de uma API em card, lista esses cards em ordem alfabética, filtra os cards pelo tipo (transporte, acomodação e atração), disponibiliza um modal com mais infos ao clicar no card principal e tem uma whishilist com os cards favoritados.
+
 ## Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:

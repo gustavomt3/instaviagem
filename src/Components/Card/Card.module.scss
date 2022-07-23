@@ -42,8 +42,11 @@
       -webkit-box-orient: vertical;
     }
   }
-  .priceCard {
+  .priceButton {
     padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     span {
       display: flex;
       align-content: center;
@@ -52,6 +55,10 @@
       padding: 5px 10px;
       border-radius: 5px;
       font-weight: 700;
+    }
+    button {
+      background-color: transparent;
+      border: none;
     }
   }
 }

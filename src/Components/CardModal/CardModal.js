@@ -32,11 +32,11 @@ const CardModal = ({ data, loading, setModalCard }) => {
             <div className={styles.phoneEmail}>
               <div className={styles.phone}>
                 <img src={iconPhone} alt="Icon Phone" />
-                <a href={data.phone}>{data.phone}</a>
+                <a href={'tel:' + data.phone}>{data.phone}</a>
               </div>
               <div className={styles.address}>
                 <img src={iconAddress} alt="Icon Address" />
-                <a href={data.email}>{data.email}</a>
+                <a href={'email:' + data.email}>{data.email}</a>
               </div>
             </div>
             <div className={styles.cardPhoto}>
@@ -45,7 +45,7 @@ const CardModal = ({ data, loading, setModalCard }) => {
             <div className={styles.aboutCard}>
               <p>{data.about}</p>
             </div>
-            <div className={styles.priceCard}>
+            <div className={styles.priceButton}>
               <span>Price: ${data.price}</span>
             </div>
           </div>

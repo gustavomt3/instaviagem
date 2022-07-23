@@ -60,10 +60,11 @@
         align-items: center;
         justify-content: center;
         height: 36px;
-        width: 190px;
+        max-width: 250px;
         background-color: #5bbfec;
         border-radius: 5px;
         margin-right: 20px;
+        padding: 0 20px;
         img {
           max-width: 16px;
           margin-right: 10px;
@@ -95,8 +96,11 @@
         -webkit-box-orient: vertical;
       }
     }
-    .priceCard {
+    .priceButton {
       padding: 0 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       span {
         display: flex;
         align-content: center;
@@ -105,6 +109,10 @@
         padding: 5px 10px;
         border-radius: 5px;
         font-weight: 700;
+      }
+      button {
+        background-color: transparent;
+        border: none;
       }
     }
   }
