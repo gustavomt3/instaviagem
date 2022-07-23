@@ -16,8 +16,11 @@ export const GlobalStorage = ({ children }) => {
         'https://us-central1-rapid-api-321400.cloudfunctions.net/instaviagem-challenge',
       );
       const data = await response.json();
-      setData(data);
-      setDataWithFilter(data);
+      const dataAlf = data.sort((a, b) => {
+        return a.name.localeCompare(b.name);
+      });
+      setData(dataAlf);
+      setDataWithFilter(dataAlf);
     } catch (err) {
       console.log('error', err);
     } finally {

@@ -5,7 +5,7 @@ import './Filter.scss';
 //Context
 import { GlobalContext } from '../../Contexts/GlobalContext';
 
-export const Filter = ({ renderDataWithFilter }) => {
+export const Filter = ({ renderDataWithFilter, data }) => {
   const global = React.useContext(GlobalContext);
   const [active, setActive] = React.useState([0, 0, 0]);
 

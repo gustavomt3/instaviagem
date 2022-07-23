@@ -20,7 +20,10 @@ const Header = () => {
           <Link
             to="/"
             className={styles.logo}
-            onClick={() => global.setDataWithFilter(global.data)}
+            onClick={() => {
+              global.setDataWithFilter(global.data);
+              document.reload(true);
+            }}
           >
             <img src={logo} alt="Logo Instaviagem" />
           </Link>
