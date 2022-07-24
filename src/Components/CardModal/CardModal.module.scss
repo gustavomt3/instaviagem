@@ -25,12 +25,15 @@
     display: flex;
     flex-direction: column;
     width: 300px;
-    height: auto;
+    max-height: 600px;
     background-color: $secondColor;
     box-shadow: 0px 0px 17px 8px #0000004f;
     padding: 30px 0 30px 0;
+    margin: 2rem 0;
+    overflow: auto;
     @include tablet {
       width: 600px;
+      max-height: 800px;
     }
     @include desktop {
       width: 800px;

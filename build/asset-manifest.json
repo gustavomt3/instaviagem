@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.91a630a2.css",
-    "main.js": "/static/js/main.7004b6a1.js",
+    "main.css": "/static/css/main.d5f27623.css",
+    "main.js": "/static/js/main.849bf948.js",
     "static/media/logo-instaviagem.png": "/static/media/logo-instaviagem.f487ed2c7d4b94a571c8.png",
     "static/media/icon-heart-empty.svg": "/static/media/icon-heart-empty.90d063c55d82078dc946bdbb920c0782.svg",
     "index.html": "/index.html",
     "static/media/icon-phone.svg": "/static/media/icon-phone.af1b9a29540b40f9fdfcb8332ee1e965.svg",
     "static/media/icon-heart.svg": "/static/media/icon-heart.6dec7951daa0b6eaa83f50de2ca5a388.svg",
     "static/media/icon-address.svg": "/static/media/icon-address.093042b18cebceea471607531d8a241d.svg",
-    "main.91a630a2.css.map": "/static/css/main.91a630a2.css.map",
-    "main.7004b6a1.js.map": "/static/js/main.7004b6a1.js.map"
+    "main.d5f27623.css.map": "/static/css/main.d5f27623.css.map",
+    "main.849bf948.js.map": "/static/js/main.849bf948.js.map"
   },
   "entrypoints": [
-    "static/css/main.91a630a2.css",
-    "static/js/main.7004b6a1.js"
+    "static/css/main.d5f27623.css",
+    "static/js/main.849bf948.js"
   ]
 }

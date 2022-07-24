@@ -37,14 +37,14 @@ const Main = () => {
               );
             })}
         </ul>
-        {modalCard && (
-          <CardModal
-            data={modalCard}
-            loading={loading}
-            setModalCard={setModalCard}
-          />
-        )}
       </main>
+      {modalCard && (
+        <CardModal
+          data={modalCard}
+          loading={loading}
+          setModalCard={setModalCard}
+        />
+      )}
     </>
   );
 };
