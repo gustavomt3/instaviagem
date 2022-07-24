@@ -1,11 +1,16 @@
 import React from 'react';
+//Context
+import { GlobalContext } from '../../Contexts/GlobalState';
 //Styles
 import styles from './CardModal.module.scss';
 //Images
 import iconPhone from '../../Assets/icon-phone.svg';
 import iconAddress from '../../Assets/icon-address.svg';
 
-const CardModal = ({ data, loading, setModalCard }) => {
+const CardModal = ({ data }) => {
+  //Context
+  const { loading, setModalCard } = React.useContext(GlobalContext);
+  //Functions
   function handleOutsideClick(event) {
     if (event.target === event.currentTarget) {
       setModalCard(null);

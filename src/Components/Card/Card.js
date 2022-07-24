@@ -4,12 +4,16 @@ import styles from './Card.module.scss';
 //Images
 import iconHeart from '../../Assets/icon-heart.svg';
 import iconHeartEmpty from '../../Assets/icon-heart-empty.svg';
+//Context
+import { GlobalContext } from '../../Contexts/GlobalState';
 
 const Card = ({ data, setModalCard }) => {
+  //Context
+  const { funcWhishilist, whishilist } = React.useContext(GlobalContext);
+  //Vars
   const [favorite, setFavorite] = React.useState(false);
-
+  //Functions
   const handleToggleFavorite = (event) => {
-    event.preventDefault();
     setFavorite(!favorite);
   };
 
@@ -18,6 +22,9 @@ const Card = ({ data, setModalCard }) => {
       setModalCard(data);
     }
   }
+
+  let storeWhishilists = whishilist.find((item) => item._id === data._id);
+  const whishilistDisabled = storeWhishilists ? true : false;
 
   return (
     <li className={styles.containerCard} onClick={handleClick}>
@@ -33,9 +40,14 @@ const Card = ({ data, setModalCard }) => {
       </div>
       <div className={styles.priceButton}>
         <span>Price: ${data.price}</span>
-        <button onClick={handleToggleFavorite}>
+        <button
+          onClick={() => {
+            handleToggleFavorite();
+            funcWhishilist(data);
+          }}
+        >
           <img
-            src={favorite ? iconHeart : iconHeartEmpty}
+            src={whishilistDisabled ? iconHeart : iconHeartEmpty}
             alt="Icon Favorite"
             aria-label="iconHeart"
           />

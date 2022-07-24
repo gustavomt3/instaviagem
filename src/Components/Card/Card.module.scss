@@ -9,7 +9,6 @@
   padding: 20px 0;
   box-shadow: 0px 0px 9px #00000040;
   margin-bottom: 30px;
-  cursor: pointer;
   .nameAddress {
     padding: 0 15px;
     margin-bottom: 20px;
@@ -25,6 +24,7 @@
   }
   .cardPhoto {
     margin-bottom: 20px;
+    cursor: pointer;
     img {
       height: 200px;
       width: 300px;
@@ -59,6 +59,7 @@
     button {
       background-color: transparent;
       border: none;
+      cursor: pointer;
     }
   }
 }
