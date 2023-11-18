@@ -15,5 +15,5 @@ jobs:
           server: ${{ secrets.ftp_host }}
           username: ${{ secrets.ftp_user }}
           password: ${{ secrets.ftp_password }}
-          server-dir: /domains/instaviagem.site/public_html/
+          server-dir: /home/u850013831/domains/instaviagem.site
           local-dir: ./build/
